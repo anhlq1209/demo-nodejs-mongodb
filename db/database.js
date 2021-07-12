@@ -7,15 +7,6 @@ class Database {
     }
 
     _connect() {
-        /* MongoClient.connect(url, function (err, db) {
-            if (err) {
-              console.log('Unable to connect to the mongoDB server. Error:', err);
-            } else {
-            
-                console.log('Connection established to', url);
-            }
-          }); */
-
         mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
             .then(() => {
                 console.log(`Database connection successfully with uri: ${uri}!`);
