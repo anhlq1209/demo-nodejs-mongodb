@@ -4,7 +4,7 @@ const Product = require('./../db/model/product');
 
 //  Hom page: loading all product
 router.get('/', (req, res) => {
-    Product.find({})
+    Product.find()
         .then(products => {
             res.render('home', { products: products })
         })
