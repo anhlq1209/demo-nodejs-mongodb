@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const uri = "mongodb+srv://dbTest:Mongodb1209%40@clustertest.lhoky.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://usertest:Usertest1209@cluster0.dfk1n.mongodb.net/test?retryWrites=true&w=majority";
 
 class Database {
     constructor() {
