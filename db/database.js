@@ -7,13 +7,17 @@ class Database {
     }
 
     _connect() {
-        mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-            .then(() => {
-                console.log(`Database connection successfully with uri: ${uri}!`);
-            })
-            .catch(err => {
-                console.log('Database connection error!');
-            })
+        mongoose.connect(uri, { 
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true })
+                .then(() => {
+                    console.log(`Database connection successfully with uri: ${uri}!`);
+                })
+                .catch(err => {
+                    console.log('Database connection error!');
+                })
     }
 }
 
