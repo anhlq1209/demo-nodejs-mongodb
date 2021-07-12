@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const mongodb_url = 'mongodb+srv://dbTest:Mongo1209%40@clustertest.lhoky.mongodb.net/test?retryWrites=true&w=majority';
+const mongoose = require('mongoose')
+const uri = "mongodb+srv://dbTest:Mongodb1209%40@clustertest.lhoky.mongodb.net/test?retryWrites=true&w=majority";
 
 class Database {
     constructor() {
@@ -7,9 +7,18 @@ class Database {
     }
 
     _connect() {
-        mongoose.connect(mongodb_url, {useNewUrlParser: true})
+        /* MongoClient.connect(url, function (err, db) {
+            if (err) {
+              console.log('Unable to connect to the mongoDB server. Error:', err);
+            } else {
+            
+                console.log('Connection established to', url);
+            }
+          }); */
+
+        mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
             .then(() => {
-                console.log('Database connection successfully!');
+                console.log(`Database connection successfully with uri: ${uri}!`);
             })
             .catch(err => {
                 console.log('Database connection error!');
