@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const uri = "mongodb+srv://usertest:Usertest1209@cluster0.dfk1n.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb://localhost:27017";    //  Localhost of mongodb
 
 class Database {
     constructor() {
@@ -7,7 +7,7 @@ class Database {
     }
 
     _connect() {
-        mongoose.connect(uri, { 
+        mongoose.connect(process.env.DATABASE_URL || uri, { 
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
