@@ -10,7 +10,8 @@ class Database {
         mongoose.connect(process.env.DATABASE_URL || uri, { 
             useNewUrlParser: true,
             useUnifiedTopology: true,
-        })
+            /* useFindAndModify: false,
+            useCreateIndex: true */ })
                 .then(() => {
                     console.log(`Database connection successfully with uri: ${uri}!`);
                 })
